@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.cfm.eshop.inventory.mapper.ProductInventoryMapper">
+
+    <update id="updateInventoryCnt">
+        update t_product_inventory set inventory_cnt = #{inventoryCnt} where product_id = #{productId}
+    </update>
+    <select id="getByProductId" resultType="org.cfm.eshop.inventory.domain.ProductInventory">
+        select * from t_product_inventory where product_id = #{productId}
+    </select>
+</mapper>

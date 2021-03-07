@@ -1,0 +1,31 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /eshop
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: mrchen124578
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/eshop?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+  redis:
+    config:
+      clusterNodes:
+        - 192.168.182.138:7003
+        - 192.168.182.138:7004
+        - 192.168.182.139:7001
+        - 192.168.182.139:7002
+        - 192.168.182.140:7005
+        - 192.168.182.140:7006
+      connectionTimeout: 60000
+      soTimeout: 3000
+      maxAttempts: 1000
+#mybatis的相关配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: org.cfm.eshop.inventory.mapper
+  #开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true
+
